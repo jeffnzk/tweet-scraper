@@ -22,7 +22,7 @@ driver = webdriver.Chrome()
 
 # Open Twitter
 driver.get("https://www.x.com")
-scrapeUser = "kallehallden"
+scrapeUser = "kingkold"
 
 def login(username, password):
   # click sign in button
@@ -31,17 +31,17 @@ def login(username, password):
   element.click()
 
   # input username
-  wait = WebDriverWait(driver, 10)  # Waits for 10 seconds
+  # wait = WebDriverWait(driver, 10)  # Waits for 10 seconds
   inputElement = wait.until(EC.presence_of_element_located((By.TAG_NAME, "INPUT")))
   inputElement.send_keys(username)
 
   # # click next button (to proceed to username/password screen)
-  wait = WebDriverWait(driver, 10)  # Waits for 10 seconds
+  # wait = WebDriverWait(driver, 10)  # Waits for 10 seconds
   nextButton = wait.until(EC.presence_of_element_located((By.XPATH, "//*[text()='Next']")))
   nextButton.click()
 
   # input password
-  wait = WebDriverWait(driver, 10)  # Waits for 10 seconds
+  # wait = WebDriverWait(driver, 10)  # Waits for 10 seconds
   passwordInput = wait.until(EC.presence_of_element_located((By.NAME, "password")))
   passwordInput.send_keys(password)
 
@@ -88,7 +88,7 @@ scrolling = True
 
 while scrolling:
   cards = wait.until(EC.presence_of_all_elements_located((By.XPATH, '//*[@data-testid="tweet"]')))
-  for card in cards[-20:]:
+  for card in cards[-25:]:
     tweet = getTweetData(card)
     if tweet:
       tweetID = ''.join(tweet)
