@@ -22,7 +22,7 @@ driver = webdriver.Chrome()
 
 # Open Twitter
 driver.get("https://www.x.com")
-scrapeUser = "davidgoggins"
+scrapeUser = "kallehallden"
 
 def login(username, password):
   # click sign in button
@@ -88,7 +88,7 @@ scrolling = True
 
 while scrolling:
   cards = wait.until(EC.presence_of_all_elements_located((By.XPATH, '//*[@data-testid="tweet"]')))
-  for card in cards[-15:]:
+  for card in cards[-20:]:
     tweet = getTweetData(card)
     if tweet:
       tweetID = ''.join(tweet)
@@ -120,6 +120,7 @@ while scrolling:
 # print(data)
 # print(tweet_ids)
 
+# sort rows ranking most liked tweets at the top
 data = sorted(data, key=lambda x: int(x[3]), reverse=True)
 
 with open('tweets.csv', 'w', newline='', encoding='utf-8') as f:
