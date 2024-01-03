@@ -22,7 +22,7 @@ driver = webdriver.Chrome()
 
 # Open Twitter
 driver.get("https://www.x.com")
-scrapeUser = "kingkold"
+scrapeUser = "kallehallden"
 
 def login(username, password):
   # click sign in button
