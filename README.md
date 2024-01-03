@@ -1,4 +1,4 @@
-Add your environment variables
+Add your environment variables under .env
 
 ```bash
 TWITTER_USERNAME=username
