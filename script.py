@@ -136,6 +136,10 @@ with open('tweets.csv', 'w', newline='', encoding='utf-8') as f:
 # import/export
 # then a script file to execute all POM classes
   
+# TODO
+# Account for:
+# "Something went wrong. Try reloading."
+  
 time.sleep(600) # 60 seconds => 1 min
 
 # Close the browser
